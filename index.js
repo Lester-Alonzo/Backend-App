@@ -1,24 +1,10 @@
-import express from "express"
-import cors from "cors"
+import app from './app.js'
+import {Home, Post, Dinamic} from './controllers'
 
-const app = express()
+app.get('/', Home)
 
-app.use(express.json())
-app.use(cors())
+app.post('/comentarios', Post)
 
-
-app.get('/', (_, res) => {
-  res.send("hello world")
-})
-
-app.post('/comentarios', (req, res) => {
-  const body = req.body
-  res.json(body)
-})
-
-app.get('/:id', (req, res) => {
-  const { id } = req.params
-  res.send(id)
-})
+app.get('/:id', Dinamic)
 
 app.listen(3000, () => console.log("http://localhost:3000"))
