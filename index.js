@@ -1,5 +1,5 @@
 import app from './app.js'
-import {Home, Post, Dinamic} from './controllers'
+import {Home, Post, Dinamic} from './controllers.js'
 
 app.get('/', Home)
 
