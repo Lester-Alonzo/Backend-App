@@ -9,3 +9,6 @@ export function Dinamic(req, res){
   const { id } = req.params
   res.send(id)
 }
+export function User(req, res){
+  res.status(200).json({view: "User"})
+}
